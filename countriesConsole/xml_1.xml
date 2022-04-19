@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<countries>
+
+    <country name="Russia">
+        <language>Russian</language>
+        <ISO>RUB</ISO>
+    </country>
+
+    <country name="Estonia">
+        <language>Estonian</language>
+        <ISO>EUR</ISO>
+    </country>
+
+    <country name="USA">
+        <language>American</language>
+        <ISO>USD</ISO>
+    </country>
+
+    <country name="Poland">
+        <language>Polish</language>
+        <ISO>PLN</ISO>
+    </country>
+
+    <country name="Czech">
+        <language>Czech</language>
+        <ISO>CZK</ISO>
+    </country>
+
+    <country name="Belarus">
+        <language>Belarusian</language>
+        <ISO>BYN</ISO>
+    </country>
+
+    <country name="United Arab Emirates">
+        <language>Arabic</language>
+        <ISO>AED</ISO>
+    </country>
+
+    <country name="China">
+        <language>Chinese</language>
+        <ISO>CNY</ISO>
+    </country>
+
+    <country name="Australia">
+        <language>English</language>
+        <ISO>AUD</ISO>
+    </country>
+
+    <country name="Kazakhstan">
+        <language>Kazakh</language>
+        <ISO>KZT</ISO>
+    </country>
+
+</countries>

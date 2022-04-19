@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pizzas>
+
+    <recipe name="Neopolitan">
+        <ingredient name="cucumber">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="ananas">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="cheese">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="flour">
+            <amount type="kg">3 kg</amount>
+        </ingredient>
+        <cooking>3 min</cooking>
+    </recipe>
+
+    <recipe name="Margarita">
+        <ingredient name="potato">
+            <amount type="tk">1.5 tk</amount>
+        </ingredient>
+        <ingredient name="ananas">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="cheese">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="flour">
+            <amount type="tk">3 kg</amount>
+        </ingredient>
+        <cooking>3 min</cooking>
+    </recipe>
+
+    <recipe name="Marinara">
+        <ingredient name="orange">
+            <amount type="tk">1 tk</amount>
+        </ingredient>
+        <cooking>3 min</cooking>
+    </recipe>
+
+    <recipe name="Krudo">
+        <ingredient name="tomato">
+            <amount type="tk">2 tk</amount>
+        </ingredient>
+        <ingredient name="ananas">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="cheese">
+            <amount type="tk">3 tk</amount>
+        </ingredient>
+        <ingredient name="flour">
+            <amount type="kg">3 kg</amount>
+        </ingredient>
+        <cooking>3 min</cooking>
+    </recipe>
+
+</pizzas>

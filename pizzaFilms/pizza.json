@@ -1,0 +1,137 @@
+[
+    {
+        "Name": "Margherita",
+        "pizzaMass": "200g",
+        "photo": "https://gotovim-doma.ru/images/recipe/5/e9/5e959e5cda3cb3d25a7fb9a469a65f3d_l.jpg",
+        "ingredients": [
+            {
+                "name": "Tomato",
+                "amount": "60g"
+            },
+            {
+                "name": "Mozarella",
+                "amount": "10g"
+            },
+            {
+                "name": "Basil",
+                "amount": "30g"
+            },
+            {
+                "name": "Cheese",
+                "amount": "100g"
+            }
+        ],
+        "steps": [
+            {
+                "stepNumb": "1",
+                "description": "How to make pizza dough: Dissolve yeast and sugar in warm water, add 2-3 tbsp. spoons of flour. Mix everything, leave for 15 minutes."
+            },
+            {
+                "stepNumb": "2",
+                "description": "Add salt, vegetable oil to the resulting dough and, gradually adding flour, knead a soft elastic dough.Knead the dough for 5 minutes on a floured surface. If the dough is too sticky to your hands, grease them with oil, but do not add too much flour, so as not to clog the dough.Form a bun from the dough, put it in a greased container and leave the dough to rest for 40-60 minutes. The dough should rise and increase in volume. From the indicated amount of ingredients, about 600 g of pizza dough is obtained."
+            },
+            {
+                "stepNumb": "3",
+                "description": "I've been making pizza with homemade sauce for a long time now. This is a completely different level, I highly recommend trying it.For a lazy sauce, chop the tomatoes very finely. For this purpose, you can use a meat grinder or blender. If you are not lazy, then you can remove the skin from the tomatoes, having previously blanched them: put them in boiling water for 5 minutes, then in ice water - the skin will come off well. (Fresh tomatoes can be substituted with tomato paste.)"
+            },
+            {
+                "stepNumb": "4",
+                "description": "Cut up the basil. If there is no fresh one, you can use 1 teaspoon of dry basil."
+            },
+            {
+                "stepNumb": "5",
+                "description": "Fry the tomatoes in vegetable oil. Evaporate excess liquid from them, add finely chopped garlic and basil, salt and sugar to taste."
+            }
+        ]
+    },
+    {
+        "Name": "Oma Pizza",
+        "pizzaMass": "240g",
+        "photo": "https://www.gastronom.ru/binfiles/images/20190323/b24a228f.jpg",
+        "ingredients": [
+            {
+                "name": "Tomato",
+                "amount": "10g"
+            },
+            {
+                "name": "Salt",
+                "amount": "30g"
+            },
+            {
+                "name": "Brokkoli",
+                "amount": "70g"
+            },
+            {
+                "name": "Flour",
+                "amount": "130g"
+            }
+        ],
+        "steps": [
+            {
+                "stepNumb": "1",
+                "description": "Prepare all the necessary ingredients for making a yeast pizza with sausage, tomatoes and cheese."
+            },
+            {
+                "stepNumb": "2",
+                "description": "Prepare yeast dough for pizza. Pour warm boiled water into a bowl, add sugar and dry yeast. Stir."
+            },
+            {
+                "stepNumb": "3",
+                "description": "Then pour in sunflower, and preferably olive oil. Add salt, mix again."
+            },
+            {
+                "stepNumb": "4",
+                "description": "And the filling in this case is traditional - sausage, sweet peppers, tomatoes and cheese."
+            },
+            {
+                "stepNumb": "5",
+                "description": "The yeast pizza was a success!"
+            }
+        ]
+    },
+    {
+        "Name": "Napolitan",
+        "pizzaMass": "180g",
+        "photo": "https://www.thespruceeats.com/thmb/9wGyNFEsTZGdPhPcKed8Mp9o3k4=/3072x2304/smart/filters:no_upscale()/authentic-neapolitan-margherita-pizza-157507884-582612543df78c6f6acb5a8a.jpg",
+        "ingredients": [
+            {
+                "name": "Cheese",
+                "amount": "60g"
+            },
+            {
+                "name": "Sausage",
+                "amount": "30g"
+            },
+            {
+                "name": "Pineapple",
+                "amount": "10g"
+            },
+            {
+                "name": "Apple",
+                "amount": "80g"
+            }
+        ],
+        "steps": [
+            {
+                "stepNumb": "1",
+                "description": "Beat the egg, salt, sugar and vegetable oil with a whisk until a homogeneous mass is obtained."
+            },
+            {
+                "stepNumb": "2",
+                "description": "Add 200 ml of water and mix well."
+            },
+            {
+                "stepNumb": "3",
+                "description": "Sift 2 cups of flour into the resulting mass and knead the elastic dough. It shouldn't be sticky. It is advisable to leave the dough for about an hour (or more time in the refrigerator), wrapping it in cling film."
+            },
+            {
+                "stepNumb": "4",
+                "description": "Roll out the pizza dough into a 0.5 cm thick circle. Lubricate with your favorite tomato sauce and lay out the filling. The filling can be any, to your taste."
+            },
+            {
+                "stepNumb": "5",
+                "description": "Bake pizza in a preheated oven for about 20 minutes at a temperature of 180 degrees."
+            }
+        ]
+    }
+]

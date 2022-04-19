@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IVKHK>
+
+    <compartment name="IT ja multimeedia">
+        <profession name="Tarkvaraarendaja (IT Akadeemia), 4 aastat">
+            <group name="JPTV18">
+                <student name="Vladislav Mudrii">
+                </student>
+                <student name="Antik Mudrii">
+                </student>
+            </group>
+            <group name="JPTV20">
+                <student name="Anton">
+                </student>
+            </group>
+        </profession>
+        <profession name="Tarkvaraarendaja (IT Akadeemia), 2 aastat">
+            <group name="JPTV17">
+                <student name="Vladislav asd">
+                </student>
+            </group>
+            <group name="JPTV21">
+                <student name="Ento">
+                </student>
+            </group>
+        </profession>
+    </compartment>
+
+    <compartment name="Ehitus ja puit">
+        <profession name="CNC puidutöötlemiskeskuse operaator, kutseõpe">
+            <group name="JPTV17">
+                <student name="Maksim">
+                </student>
+            </group>
+            <group name="JPTV19">
+                <student name="Artur">
+                </student>
+            </group>
+            <group name="JPTV14">
+                <student name="Egor">
+                </student>
+            </group>
+        </profession>
+        <profession name="Operaator, 4 aastat">
+            <group name="JPTV115">
+                <student name="Maaaaksim">
+                </student>
+            </group>
+            <group name="JPTV19">
+                <student name="Arrrtur">
+                </student>
+            </group>
+            <group name="JPTV14">
+                <student name="Egggor">
+                </student>
+            </group>
+        </profession>
+    </compartment>
+    <!--  etc  -->
+</IVKHK>
