@@ -1,0 +1,27 @@
+-- для жанров
+INSERT INTO `genre`(`id`, `name`) VALUES ("1","Драма");
+INSERT INTO `genre`(`id`, `name`) VALUES ("2","Комедия");
+INSERT INTO `genre`(`id`, `name`) VALUES ("3","Боевик");
+INSERT INTO `genre`(`id`, `name`) VALUES ("4","Детектив");
+INSERT INTO `genre`(`id`, `name`) VALUES ("5","Хоррор");
+
+--для языков
+INSERT INTO `language`(`id`, `name`) VALUES ("1","Русский");
+INSERT INTO `language`(`id`, `name`) VALUES ("2","Английский");
+INSERT INTO `language`(`id`, `name`) VALUES ("3","Эстонский");
+INSERT INTO `language`(`id`, `name`) VALUES ("4","Японский");
+
+--для актеров
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("1","Райан","Гослинг");
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("2","Брэд","Питт");
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("3","Уилл","Смит");
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("4","Леонардо","Дикаприо");
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("5","Брюс","Уилис");
+INSERT INTO `actors`(`id`, `firstName`, `lastname`) VALUES ("6","Арнольд","Шварценеггер");
+
+--для фильмов
+INSERT INTO `film`(`id`, `title`, `publishYear`, `plot`, `rutime`, `poster`) VALUES ("1","Драйв","2011","Тут есть Райан гослинг","100","https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_SX300.jpg");
+INSERT INTO `film`(`id`, `title`, `publishYear`, `plot`, `rutime`, `poster`) VALUES ("2","Я робот","2004","Человек борится против злого ИИ","115","https://m.media-amazon.com/images/M/MV5BNmE1OWI2ZGItMDUyOS00MmU5LWE0MzUtYTQ0YzA1YTE5MGYxXkEyXkFqcGdeQXVyMDM5ODIyNw@@._V1_SX300.jpg");
+INSERT INTO `film`(`id`, `title`, `publishYear`, `plot`, `rutime`, `poster`) VALUES ("3","Терминатор","1984","Робот возвращается во времени чтобы победить в войне","107","https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg");
+INSERT INTO `film`(`id`, `title`, `publishYear`, `plot`, `rutime`, `poster`) VALUES ("4","Бойцовский клуб","1999","Главный герой с раздвоением личности дерется с мужиками","139","https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg");
+INSERT INTO `film`(`id`, `title`, `publishYear`, `plot`, `rutime`, `poster`) VALUES ("5","Большой куш","2000","Герои ненавидят цыган, но приходится с ними работать","102","https://m.media-amazon.com/images/M/MV5BMTA2NDYxOGYtYjU1Mi00Y2QzLTgxMTQtMWI1MGI0ZGQ5MmU4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg");
