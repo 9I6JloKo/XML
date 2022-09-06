@@ -38,6 +38,6 @@ for i in soup.find_all("item"):
 table_file.write('<p></body><html>')
 table_file.close()
 
-url = 'D:\JPTV20\XML GRISH\index.html'
+url = 'D:\JPTV20\Ivleva\XML\soap\index.html'
 webbrowser.open(url, new=2)  # open in new tab
 

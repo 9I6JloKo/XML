@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <sellers>
+        <seller>
+            <fullName name = "Anton Pankov"></fullName>
+            <car name = "Audi S7 4.0 417kW" Primary_reg = '2015' collor = 'black'></car>
+            <phone number = '+3725593726'></phone>
+            <engine mileage = '135000 km' fuel = 'petrol'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '45900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/941/163101941.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Nikita ivanov"></fullName>
+            <car name = "Porsche Panamera 4S Long Bi-Turbo 3.0 309kW" Primary_reg = '2013' collor = 'white'></car>
+            <phone number = '+37256632495'></phone>
+            <engine mileage = '146000 km' fuel = 'petrol'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '45900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/228/162009228.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Maksim Gorodskoi"></fullName>
+            <car name = "BMW 320 GT M-Sportpakett 2.0 Twin turbo 208kW" Primary_reg = '2017' collor = 'blue'></car>
+            <phone number = '+37253739373'></phone>
+            <engine mileage = '110000 km' fuel = 'petrol'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '22900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/365/159048365.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Georgi Skovorotkin"></fullName>
+            <car name = "Mercedes-Benz GLC 220 d 4Matic AMG-Line 2.2 125kW" Primary_reg = '2018' collor = 'white'></car>
+            <phone number = '+37255436526'></phone>
+            <engine mileage = '113200 km' fuel = 'disel'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '33900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/437/159727437.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Eugeni Kostrulkin"></fullName>
+            <car name = "Volvo XC40 AWD Momentum Geartronic 2.0 D4 140kW" Primary_reg = '2018' collor = 'red'></car>
+            <phone number = '+37255666626'></phone>
+            <engine mileage = '83100 km' fuel = 'disel'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '33900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/403/159034403.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Oleg Vilkin"></fullName>
+            <car name = "Porsche Taycan TURBO / LUXURY+ / SAFETY PRO / FULL 500kW" Primary_reg = '2020' collor = 'white'></car>
+            <phone number = '+37257776626'></phone>
+            <engine mileage = '11000 km' fuel = 'electric'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '159900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/393/155334393.jpg"></img>
+        </seller>
+        <seller>
+            <fullName name = "Nikita Loshkin"></fullName>
+            <car name = "Volkswagen Golf 1.4 81kW" Primary_reg = '2018' collor = 'white'></car>
+            <phone number = '+37269526525'></phone>
+            <engine mileage = '230000 km' fuel = 'petrol'></engine>
+            <transmission type = 'automatic'></transmission>
+            <price price = '159900' type="euro"></price>
+            <img url="https://img12.img-bcg.eu/auto24/560/821/162162821.jpg"></img>
+        </seller>
+
+    </sellers>        
+</root>
