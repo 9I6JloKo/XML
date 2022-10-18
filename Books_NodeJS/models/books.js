@@ -1,5 +1,5 @@
 const {Sequelize} = require('sequelize');
-const db = require('../database')
+const db = require('../connect/database')
 const {DataTypes,Model} = require('sequelize');
 const Category = require('./category');
 const Author = require('./author');
@@ -49,15 +49,24 @@ Book.init(
         //     type: DataTypes.INTEGER,
         //     allowNull:false,
         // },
-        categories: {
+        category: {
             type: DataTypes.INTEGER,
             allowNull:false,
+        },
+        createdAt: {
+            type:DataTypes.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+            allowNull: false
+        },
+        updatedAt: {
+            type:DataTypes.DATE,
+            defaultValue: Sequelize.fn('NOW'),
+            allowNull: false
         }
     },
     {
         sequelize:db,
         modelName: 'book',
-        timestamps: false,
     },
 )
 

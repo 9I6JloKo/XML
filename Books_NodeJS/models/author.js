@@ -1,7 +1,8 @@
-const {Sequelize, DataTypes} = require('sequelize');
-const db = require('../database')
+const {Sequelize, DataTypes, Model} = require('sequelize');
+const db = require('../connect/database')
 const Books = require('./books')
-const Author = db.define('author', {
+class Author extends Model {}
+Author.init( {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement:true,
@@ -9,14 +10,25 @@ const Author = db.define('author', {
         allowNull:false
     },
     firstname: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull:false
     },
     lastname: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(100),
         allowNull:false
     },
+    createdAt: {
+        type:DataTypes.DATE,
+        defaultValue: Sequelize.fn('NOW'),
+        allowNull: false
+    },
+    updatedAt: {
+        type:DataTypes.DATE,
+        defaultValue: Sequelize.fn('NOW'),
+        allowNull: false
+    }
 },{
-    timestamps:false,
+    sequelize: db,
+    modelName: "author",
 })
 module.exports = Author
