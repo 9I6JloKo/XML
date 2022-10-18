@@ -1,15 +1,10 @@
-const connection = require(".");
+const mysql = require('mysql2');
 
-module.exports = {
+const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'sakila'
-};
+    database: 'sakila',
+});
 
-connection.query(
-    'SELECT * FROM category',
-    function(err, results) {
-        console.log(results);
-    }
-)
+module.exports = connection;
