@@ -19,11 +19,11 @@ Book.init(
         },
         isbn: {
             type: DataTypes.BIGINT,
-            allowNull:true,
+            allowNull:false,
         },
         pageCount: {
             type: DataTypes.INTEGER,
-            allowNull:true,
+            allowNull:false,
         },
         publishedDate: {
             type: DataTypes.DATE,
@@ -42,15 +42,15 @@ Book.init(
             allowNull:true,
         },
         status: {
-            type: DataTypes.ENUM('PUBLISHED', 'NOT PUBLISHED'),
+            type: DataTypes.ENUM('PUBLISH', 'MEAP'),
             allowNull:false,
         },
-        // authors: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull:false,
-        // },
-        category: {
-            type: DataTypes.INTEGER,
+        authors: {
+            type: DataTypes.STRING,
+            allowNull:false,
+        },
+        categories: {
+            type: DataTypes.STRING,
             allowNull:false,
         },
         createdAt: {
