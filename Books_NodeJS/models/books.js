@@ -45,11 +45,11 @@ Book.init(
             type: DataTypes.ENUM('PUBLISH', 'MEAP'),
             allowNull:false,
         },
-        authors: {
+        author: {
             type: DataTypes.STRING,
             allowNull:false,
         },
-        categories: {
+        category: {
             type: DataTypes.STRING,
             allowNull:false,
         },

@@ -1,5 +1,5 @@
-let Book = require('./models/books.js')
-fetch('toParse.json').then(response => response.json())
+let Book = require('../books.js')
+fetch('C:\\Users\\anana\\Documents\\XML\\Books_NodeJS\\models\\jsonParse\\toParse.json').then(response => response.json())
 .then(json => {
         for (let i = 0; i < json.length; i++) {
             console.log(json[i]);
@@ -12,10 +12,8 @@ fetch('toParse.json').then(response => response.json())
                 shortDescription: json[i].shortDescription,
                 longDescription: json[i].longDescription,
                 status: json[i].status,
-                longDescription: json[i].longDescription,
-                longDescription: json[i].longDescription,
-                longDescription: json[i].longDescription,
-
+                author: json[i].authors,
+                category: json[i].categories
             }).then(res => {
                 console.log(res);
             }).catch(err => console.log(err));
