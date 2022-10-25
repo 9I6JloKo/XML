@@ -7,28 +7,26 @@ Author.init( {
         type: DataTypes.INTEGER,
         autoIncrement:true,
         primaryKey:true,
-        allowNull:false
+        allowNull:false,
+        field: 'author_id'
     },
-    firstname: {
+    fullname: {
         type: Sequelize.STRING(100),
         allowNull:false
-    },
-    lastname: {
-        type: Sequelize.STRING(100),
-        allowNull:false
-    },
-    createdAt: {
-        type:DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-        allowNull: false
-    },
-    updatedAt: {
-        type:DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-        allowNull: false
     }
+    // createdAt: {
+    //     type:DataTypes.DATE,
+    //     defaultValue: Sequelize.fn('NOW'),
+    //     allowNull: false
+    // },
+    // updatedAt: {
+    //     type:DataTypes.DATE,
+    //     defaultValue: Sequelize.fn('NOW'),
+    //     allowNull: false
+    // }
 },{
     sequelize: db,
+    timestamps:false,
     modelName: "author",
 })
 module.exports = Author

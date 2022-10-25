@@ -12,19 +12,21 @@ Category.init ({
     categoryName: {
         type: DataTypes.STRING,
         allowNull:false
-    },
-    createdAt: {
-        type:DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-        allowNull: false
-    },
-    updatedAt: {
-        type:DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-        allowNull: false
     }
+    // createdAt: {
+    //     type:DataTypes.DATE,
+    //     defaultValue: Sequelize.fn('NOW'),
+    //     allowNull: false
+    // },
+    // updatedAt: {
+    //     type:DataTypes.DATE,
+    //     defaultValue: Sequelize.fn('NOW'),
+    //     allowNull: false
+    // }
 },{
     sequelize: db,
     modelName: "category",
+    timestamps:false
+    // tableName: "category"
 })
 module.exports = Category

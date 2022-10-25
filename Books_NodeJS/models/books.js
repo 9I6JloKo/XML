@@ -19,7 +19,7 @@ Book.init(
         },
         isbn: {
             type: DataTypes.BIGINT,
-            allowNull:false,
+            allowNull:true,
         },
         pageCount: {
             type: DataTypes.INTEGER,
@@ -45,27 +45,28 @@ Book.init(
             type: DataTypes.ENUM('PUBLISH', 'MEAP'),
             allowNull:false,
         },
-        author: {
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
-        category: {
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
-        createdAt: {
-            type:DataTypes.DATE,
-            defaultValue: Sequelize.fn('NOW'),
-            allowNull: false
-        },
-        updatedAt: {
-            type:DataTypes.DATE,
-            defaultValue: Sequelize.fn('NOW'),
-            allowNull: false
-        }
+        // author: {
+        //     type: DataTypes.STRING,
+        //     allowNull:false,
+        // },
+        // category: {
+        //     type: DataTypes.STRING,
+        //     allowNull:false,
+        // },
+        // createdAt: {
+        //     type:DataTypes.DATE,
+        //     defaultValue: Sequelize.fn('NOW'),
+        //     allowNull: false
+        // },
+        // updatedAt: {
+        //     type:DataTypes.DATE,
+        //     defaultValue: Sequelize.fn('NOW'),
+        //     allowNull: false
+        // }
     },
     {
         sequelize:db,
+        timestamps:false,
         modelName: 'book',
     },
 )
