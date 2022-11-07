@@ -28,6 +28,9 @@ app.get("/", (req,res) => {
 
 require("./routes/categoryRoutes")(app)
 require("./routes/authorRoutes")(app)
+require("./routes/bookRoutes")(app)
+require("./routes/authorBookRoutes")(app)
+require("./routes/bookCategoryRoutes")(app)
 
 // const options = {
 //     definition: {
@@ -58,12 +61,6 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
 })
-
-
-
-
-
-
 
 
 
