@@ -83,9 +83,10 @@ exports.delete = async (req,res) => {
         await AuthorBooks.destroy({
             where: id
         })
-        .then(data => {
-            res.send(data)
-        })
+        .then(
+            res.status(200).send({
+                message: `Book author ${req.body.authorId} and ${req.body.bookId} deleted!`
+            }))
         .catch(err => {
             res.status(500).send({
                 message:
@@ -93,6 +94,8 @@ exports.delete = async (req,res) => {
             })
         })
     }else{
-        
+        res.status(200).send({
+            message: `Book author ${req.body.authorId} and ${req.body.bookId} cannot be deleted!`
+        })
     }
 }

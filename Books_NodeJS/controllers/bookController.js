@@ -1,7 +1,12 @@
 const e = require('express')
-const {seq} = require('sequelize')
+const Sequelize = require('sequelize')
+const seq = Sequelize.Op;
 const Book = require('../models/books')
-const AuthorBooks = require('../models/authorsbooks')
+const AuthorBooks = require('../models/authorsbooks');
+const { Model } = require('sequelize');
+const Author = require('../models/author');
+const Category = require('../models/category');
+const CategoryBooks= require('../models/bookscategories');
 
 exports.create = (req,res) => {
     if (!req.body.title || !req.body.pageCount || !req.body.status) {
@@ -83,9 +88,10 @@ exports.delete = async (req,res) => {
         await Book.destroy({
             where: id
         })
-        .then(data => {
-            res.send(data)
-        })
+        .then(
+            res.status(200).send({
+                message: `Book ${req.body.id} deleted!`
+            }))
         .catch(err => {
             res.status(500).send({
                 message:
@@ -93,7 +99,9 @@ exports.delete = async (req,res) => {
             })
         })
     }else{
-        
+        res.status(200).send({
+            message: `Book ${req.body.id} cannot be deleted!`
+        })
     }
 }
 // МЕТОДЫ 2 части задания
@@ -117,8 +125,9 @@ exports.findByTitle = (req,res) => {
         return
     }
     Book.findAll({
-        where: {[seq.like]:{title: '%'+req.body.title+'%'}}
-    })
+        where: {
+            title: { [seq.like]: `%${req.body.title}%`}
+        }})
     .then(data => {
         res.send(data)
     })
@@ -136,28 +145,85 @@ exports.findByTitle = (req,res) => {
         })
         return
     }
-    let bookAuthorId = await AuthorBooks.findAll({
-        where: {authorId: req.body.authorId},
-        raw: true
+    Book.findAll({
+        include:[
+            {
+                model: Author,
+                where: {
+                    author_id: req.body.authorId
+                }
+            }
+        ]
     })
-    if(bookAuthorId != null){
-        Book.findAll({
-            where: {
-                id: bookAuthorId.bookId
-        }})
-        .then(data => {
-            res.send(data)
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occured while retrieving authors"
-            })
-        })
-    }else{
+    .then(data => {
+        res.send(data)
+    })
+    .catch(err => {
         res.status(500).send({
             message:
-                "author is false"
+                err.message || "Some error occured while retrieving authors"
+        })
+    })
+}
+exports.findByCategory = async (req,res) => {
+    if (!req.body.categoryId) {
+        res.status(400).send({
+            message: "categoryId is not defined"
+        })
+        return
+    }
+    Book.findAll({
+        include:[
+            {
+                model: Category,
+                where: {
+                    category_id: req.body.categoryId
+                }
+            }
+        ]
+    })
+    .then(data => {
+        res.send(data)
+    })
+    .catch(err => {
+        res.status(500).send({
+            message:
+                err.message || "Some error occured while retrieving authors"
+        })
+    })
+}
+exports.showCategoriesBooks = async (req,res) => {
+    // CategoryBooks.findAll({
+    //     attributes: {
+    //         include:[[Sequelize.fn('COUNT', Sequelize.col("bookId")), 'categoryBooks']]
+    //     },
+    //     group: ['categoryId'],
+    // })
+    // .then(data => {
+    //     res.send(data)
+    // })
+    // .catch(err => {
+    //     res.status(500).send({
+    //         message:
+    //             err.message || "Some error occured while retrieving authors"
+    //     })
+    // })
+    let answer = null;
+    await Category.findAll({
+        attributes: ['category_id', 'categoryName'],
+    })
+    .then(data => {
+        let jsonFormat = JSON.stringify(data);
+        answer = JSON.parse(jsonFormat);
+    })
+    for (let i = 0; i < answer.length; i++) {
+        await CategoryBooks.count({
+            where:{categoryId:answer[i].category_id}
+        })
+        .then(data => {
+            // delete answer[i].category_id;
+            answer[i].totalBooks = data;
         })
     }
+    res.send(answer);
 }

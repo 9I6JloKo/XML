@@ -79,9 +79,10 @@ exports.delete = async (req,res) => {
         await Author.destroy({
             where: id
         })
-        .then(data => {
-            res.send(data)
-        })
+        .then(
+            res.status(200).send({
+                message: `Author ${req.body.id} deleted!`
+            }))
         .catch(err => {
             res.status(500).send({
                 message:
@@ -89,6 +90,8 @@ exports.delete = async (req,res) => {
             })
         })
     }else{
-        
+        res.status(200).send({
+            message: `Author ${req.body.id} cannot be deleted!`
+        })
     }
 }

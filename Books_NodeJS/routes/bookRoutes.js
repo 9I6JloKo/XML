@@ -57,5 +57,7 @@ module.exports = app => {
     router.put("/", books.change)
     router.get("/findByTitle", books.findByTitle)
     router.get("/findByAuthor", books.findByAuthor)
+    router.get("/findByCategory", books.findByCategory)
+    router.get("/showCategoriesBooks", books.showCategoriesBooks)
     app.use('/api/books', router)
 }
