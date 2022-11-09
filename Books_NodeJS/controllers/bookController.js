@@ -193,37 +193,55 @@ exports.findByCategory = async (req,res) => {
     })
 }
 exports.showCategoriesBooks = async (req,res) => {
-    // CategoryBooks.findAll({
-    //     attributes: {
-    //         include:[[Sequelize.fn('COUNT', Sequelize.col("bookId")), 'categoryBooks']]
-    //     },
-    //     group: ['categoryId'],
-    // })
-    // .then(data => {
-    //     res.send(data)
-    // })
-    // .catch(err => {
-    //     res.status(500).send({
-    //         message:
-    //             err.message || "Some error occured while retrieving authors"
-    //     })
-    // })
-    let answer = null;
-    await Category.findAll({
-        attributes: ['category_id', 'categoryName'],
+    await CategoryBooks.findAll({
+        attributes: {
+            include:[[Sequelize.fn('COUNT', Sequelize.col("bookId")), 'TotalBooks']]
+        },
+        group: ['categoryId'],
     })
     .then(data => {
-        let jsonFormat = JSON.stringify(data);
-        answer = JSON.parse(jsonFormat);
-    })
-    for (let i = 0; i < answer.length; i++) {
-        await CategoryBooks.count({
-            where:{categoryId:answer[i].category_id}
+        let categories = null;
+        let jsonstring2 = JSON.stringify(data)
+        answer = JSON.parse(jsonstring2)
+        Category.findAll({
+            attributes:["category_id", "categoryName"],
+            order: ["category_id"]
         })
         .then(data => {
-            // delete answer[i].category_id;
-            answer[i].totalBooks = data;
+            let jsonstring = JSON.stringify(data);
+            categories = JSON.parse(jsonstring);
+            for (let i = 0; i < answer.length; i++) {
+                answer[i].categoryName = categories[i].categoryName;
+                delete answer[i].bookId;
+                delete answer[i].createdAt;
+                delete answer[i].updatedAt;
+            }
+            res.send(answer)
+        }
+        )
+    })
+    .catch(err => {
+        res.status(500).send({
+            message:
+                err.message || "Some error occured while retrieving authors"
         })
-    }
-    res.send(answer);
+    })
+    // let answer = null;
+    // await Category.findAll({
+    //     attributes: ['category_id', 'categoryName'],
+    // })
+    // .then(data => {
+    //     let jsonFormat = JSON.stringify(data);
+    //     answer = JSON.parse(jsonFormat);
+    // })
+    // for (let i = 0; i < answer.length; i++) {
+    //     await CategoryBooks.count({
+    //         where:{categoryId:answer[i].category_id}
+    //     })
+    //     .then(data => {
+    //         // delete answer[i].category_id;
+    //         answer[i].totalBooks = data;
+    //     })
+    // }
+    // res.send(answer);
 }
