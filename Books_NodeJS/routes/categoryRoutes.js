@@ -53,7 +53,7 @@ module.exports = app => {
     //  */
     router.get("/", categories.findAll)
 
-    router.delete("/", categories.delete)
+    router.delete("/:id", categories.delete)
 
     router.put("/", categories.change)
 

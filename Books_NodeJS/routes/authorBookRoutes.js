@@ -18,9 +18,9 @@
 //  */
 
 module.exports = app => {
-    const authors = require("../controllers/authorController")
+    const authorsBooks = require("../controllers/authorBookController")
     const router = require("express").Router()
-    router.post("/", authors.create)
+    router.post("/", authorsBooks.create)
     // /**
     //  * 
     //  * @swagger
@@ -51,9 +51,8 @@ module.exports = app => {
     //  *                                              example: RESTful API
     //  *                                  
     //  */
-    router.get("/", authors.findAll)
-
-    router.delete("/:id", authors.delete)
-    router.put("/", authors.change)
-    app.use('/api/authors', router)
+    router.get("/", authorsBooks.findAll)
+    router.delete("/", authorsBooks.delete)
+    router.put("/", authorsBooks.change)
+    app.use('/api/authorsBooks', router)
 }

@@ -3,6 +3,12 @@ const db = require('../connect/database')
 const sequelize = require('../connect/database.js')
 class authorsbooks extends Model {}
 authorsbooks.init( {
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   autoIncrement:true,
+    //   primaryKey:true,
+    //   allowNull:false,
+    // },
     authorId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -24,7 +30,7 @@ authorsbooks.init( {
     }, {
       sequelize,
       tableName: 'authorsbooks',
-      timestamps: false,
+      timestamps: true,
       indexes: [
         {
           name: "PRIMARY",

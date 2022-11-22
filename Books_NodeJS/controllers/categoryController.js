@@ -63,7 +63,7 @@ exports.change = async (req,res) => {
     }
 }
 exports.delete = async (req,res) => {
-    if (!req.body.id) {
+    if (!req.params.id) {
         res.status(400).send({
             message: "id is not defined"
         })
@@ -79,14 +79,19 @@ exports.delete = async (req,res) => {
         await Category.destroy({
             where: id
         })
-        .then(data => {
-            res.send(data)
-        })
+        .then(
+            res.status(200).send({
+                message: `Category ${req.body.id} deleted!`
+            }))
         .catch(err => {
             res.status(500).send({
                 message:
                     err.message || "Some error occured while retrieving categories"
             })
         })
-    }else{}
+    }else{
+        res.status(200).send({
+            message: `Category ${req.body.categoryId} and ${req.body.nookId} cannot be deleted!`
+        })
+    }
 }

@@ -1,43 +1,47 @@
 const e = require('express')
-const Author = require('../models/author')
+const AuthorBooks = require('../models/authorsbooks')
 
 exports.create = (req,res) => {
-    if (!req.body.fullname) {
+    if (!req.body.authorId || !req.body.bookId) {
         res.status(400).send({
-            message: "fullname is not defined"
+            message: "idbook or author is not defined"
         })
         return
     }
-    const author = {
-        fullname: req.body.fullname,
+    const authorBooks = {
+        authorId: req.body.authorId,
+        bookId: req.body.bookId,
     }
-    Author.create(author)
+    AuthorBooks.create(authorBooks)
     .then(data => {
         res.send(data)
     })
     .catch(err => {
         res.status(500).send({
             message:
-                err.message || "Some error occured while creating Author"
+                err.message || "Some error occured while creating authorBook"
         })
     })
 }
 exports.change = async (req,res) => {
-    if (!req.body.fullname || !req.body.id) {
+    if (!req.body.authorId || !req.body.bookId) {
         res.status(400).send({
-            message: "name or id is not defined"
+            message: "id is not defined"
         })
         return
     }
-    let authorChar = await Author.findOne({
-        where: {author_id: req.body.id}
+    let authorBookChar = await AuthorBooks.findOne({
+        where: {authorId: req.body.authorId, bookId: req.body.bookId}
     })
-    if(authorChar != null){
-        const author = {
-            fullName: req.body.fullname,
+    if(authorBookChar != null){
+        const authorBook = {
+            authorId: req.body.authorId,
+            bookId: req.body.bookId,
+            createdAt: req.body.createdAt,
+            updatedAt: req.body.updatedAt,
         }
-        await Author.update(author,{
-            where: {author_id: req.body.id}
+        await AuthorBooks.update(authorBook,{
+            where: {authorId: req.body.authorId, bookId: req.body.bookId}
         })
         .then(data => {
             res.send(data)
@@ -51,7 +55,7 @@ exports.change = async (req,res) => {
     }
 }
 exports.findAll = (req,res) => {
-    Author.findAll()
+    AuthorBooks.findAll()
     .then(data => {
         res.send(data)
     })
@@ -63,25 +67,25 @@ exports.findAll = (req,res) => {
     })
 }
 exports.delete = async (req,res) => {
-    if (!req.params.id) {
+    if (!req.body.authorId || !req.body.bookId) {
         res.status(400).send({
             message: "id is not defined"
         })
         return
     }
     const id = {
-        author_id: req.params.id
+        authorId: req.body.authorId, bookId: req.body.bookId
     }
-    let authorChar = await Author.findOne({
+    let authorBookChar = await AuthorBooks.findOne({
         where: id
     })
-    if(authorChar != null){
-        await Author.destroy({
+    if(authorBookChar != null){
+        await AuthorBooks.destroy({
             where: id
         })
         .then(
             res.status(200).send({
-                message: `Author ${req.params.id} deleted!`
+                message: `Book author ${req.body.authorId} and ${req.body.bookId} deleted!`
             }))
         .catch(err => {
             res.status(500).send({
@@ -91,7 +95,7 @@ exports.delete = async (req,res) => {
         })
     }else{
         res.status(200).send({
-            message: `Author ${req.params.id} cannot be deleted!`
+            message: `Book author ${req.body.authorId} and ${req.body.bookId} cannot be deleted!`
         })
     }
 }

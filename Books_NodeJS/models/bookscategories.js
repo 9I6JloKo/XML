@@ -4,6 +4,12 @@ const Books = require('./books')
 const sequelize = require('../connect/database.js')
 class bookscategories extends Model {}
 bookscategories.init( {
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   autoIncrement:true,
+    //   primaryKey:true,
+    //   allowNull:false,
+    // },
     bookId: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -25,7 +31,7 @@ bookscategories.init( {
     }, {
       sequelize,
       tableName: 'bookscategories',
-      timestamps: false,
+      timestamps: true,
       indexes: [
         {
           name: "PRIMARY",
