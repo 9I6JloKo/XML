@@ -9,7 +9,7 @@ const Category = require('../models/category');
 const CategoryBooks= require('../models/bookscategories');
 
 exports.create = (req,res) => {
-    if (!req.body.title || !req.body.pageCount || !req.body.status) {
+    if (!req.body.title || !req.body.pageCount || !req.body.status  || !req.body.categories || !req.body.authors) {
         res.status(400).send({
             message: "sth is not defined"
         })

@@ -4,7 +4,7 @@ let Category = require('./models/category.js');
 let Author = require('./models/author.js');
 let BooksCategories = require('./models/bookscategories');
 let AuthorsBooks = require('./models/authorsbooks');
-async function readBooks(data) {
+module.exports = async function readBooks(data) {
     for (item of data) {
         pdate = item["publishedDate"] != undefined ? item["publishedDate"]["$date"] : ''
         sDesc = item["shortDescription"] != undefined ? item["shortDescription"] : ''
@@ -66,4 +66,3 @@ async function readBooks(data) {
         }
     }
 }
-readBooks(data)
